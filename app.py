@@ -6,16 +6,6 @@ from io import BytesIO
 import dnnlib
 from PIL import Image
 import os
-import gdown
-
-# get pretrained pkl from google drive server if it isn't there already
-
-url = "https://drive.google.com/uc?id=19wQe12syOYopUVA_eEHUdiqtdIKl4m7L"
-output = 'pretrained/masks-early.pkl'
-if os.path.isfile(output) is False:
-    print('file not found, downloading from google drive')
-    gdown.download(url, output)
-
 
 
 # initialize tensorflow session
@@ -47,4 +37,4 @@ def getimage():
     return serve_pil_image(data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='8000', debug=True, threaded=False)
+    app.run(host='0.0.0.0', port='8080', debug=True, threaded=False)

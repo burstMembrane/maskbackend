@@ -4,7 +4,7 @@ from run_generator import generate_images
 import random
 
 # def generate_images(network_pkl, seeds, npy_files, truncation_psi):
-dnnlib.tflib.init_tf()
+
 
 def getnewImage():
     seed = random.randint(1,1000)
